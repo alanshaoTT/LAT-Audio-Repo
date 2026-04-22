@@ -42,13 +42,30 @@ We further introduce:
 ## 🧠 Framework
 
 <p align="center">
-  <img src="figs/framework.png" width="900"/>
+  <img src="figs/lat-audio.png" width="900"/>
+
 </p>
 
 LAT-Audio follows a **progressive global-to-local reasoning paradigm**:
 1. Construct a global timeline as temporal-semantic anchors
 2. Perform multi-step reasoning via TWA-CoT
 3. Iteratively retrieve audio evidence through tool calls
+
+## 📊 Dataset & Benchmark
+
+| Component | Description |
+|----------|------------|
+| **LAT-Chronicle** | 1.2k-hour long-form dataset (1k zh / 200h en) |
+| **LAT-Bench** | Human-verified benchmark (DAC, TAG, TAC) |
+
+👉 Download:
+- 🤗 LAT-Chronicle: ...
+- 🤗 LAT-Bench: ...
+
+<p align="center">
+  <img src="figs/pipeline.png" width="900"/>
+
+</p>
 
 ## Download
 * The LAT-Chronicle dataset are available at [LAT-Chronicle](https://huggingface.co/datasets/mcshao/LAT-Chronicle).
