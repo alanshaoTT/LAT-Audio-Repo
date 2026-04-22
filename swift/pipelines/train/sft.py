@@ -25,6 +25,7 @@ class SwiftSft(SwiftPipeline, TunerMixin):
 
     def __init__(self, args: Optional[Union[List[str], SftArguments]] = None) -> None:
         super().__init__(args)
+        import pdb;pdb.set_trace()
         self.train_msg = {}
         self._prepare_model_tokenizer()
         self._prepare_template()
@@ -47,6 +48,7 @@ class SwiftSft(SwiftPipeline, TunerMixin):
 
     @RayHelper.function(group='default')
     def _prepare_model_tokenizer(self, **kwargs):
+        # import pdb;pdb.set_trace()
         args = self.args
         self.model, self.processor = args.get_model_processor(**kwargs)
         if args.sequence_parallel_size > 1:
@@ -267,6 +269,7 @@ class SwiftSft(SwiftPipeline, TunerMixin):
         logger.info(f'The logging file will be saved in: {logging_path}')
         resume_checkpoint = self._get_resume_checkpoint(trainer)
         try:
+            # import pdb;pdb.set_trace()
             trainer.train(resume_checkpoint)
         finally:
             res = self._save_trainer_state(trainer)

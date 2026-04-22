@@ -188,7 +188,7 @@ class GRPOTrainer(RolloutTrainerMixin, SwiftMixin, HFGRPOTrainer):
         #   - The input is treated as a standard local batch (no accumulation, no multiple iterations)
         #   - Completions are generated for each batch without buffering or reuse
         # Returns a single local batch in both cases.
-
+        # import pdb; pdb.set_trace()
         mode = 'train' if self.model.training else 'eval'
         if mode == 'train':
             num_rollout_samples = self.args.steps_per_generation * self.template.sequence_parallel_size
@@ -226,8 +226,9 @@ class GRPOTrainer(RolloutTrainerMixin, SwiftMixin, HFGRPOTrainer):
         # resample for encoding failed data when set truncation_strategy 'delete'
         if self.template.truncation_strategy == 'raise':
             inputs = self.resample_encode_failed_inputs(inputs)
-
+        
         inputs = self._generate_completions(inputs)
+        # import pdb; pdb.set_trace()
         total_rewards_per_func = self._score_completions(inputs)
         mode = 'train' if self.model.training else 'eval'
 
@@ -245,7 +246,7 @@ class GRPOTrainer(RolloutTrainerMixin, SwiftMixin, HFGRPOTrainer):
             inputs[i]['advantages'] = advantage
         # log metrics in inputs
         self._logs['advantages'].extend(total_advantages.tolist())
-
+        # import pdb; pdb.set_trace()
         # Add advantages to each batch in batch_encoded_inputs
         gas_chunks = self.split_by_mini_batches(inputs)
         assert len(gas_chunks) == len(batch_encoded_inputs), \
@@ -303,6 +304,7 @@ class GRPOTrainer(RolloutTrainerMixin, SwiftMixin, HFGRPOTrainer):
         Returns:
             rewards_per_func: Tensor of shape (num_examples, num_reward_funcs) with all reward values
         """
+        # import pdb; pdb.set_trace()
         device = self.accelerator.device
         # If using gym environment, extract rewards directly from inputs
         if self.use_gym_env:
@@ -1859,8 +1861,10 @@ class GRPOTrainer(RolloutTrainerMixin, SwiftMixin, HFGRPOTrainer):
         return output
 
     def training_step(self, model: nn.Module, inputs: DataType, num_items_in_batch=None) -> torch.Tensor:
+        # import pdb;pdb.set_trace()
         if self.args.async_generate:
             # Wait for the eval rollout to complete
+            # 
             while not self.is_async_generate_eval_rollout_done():
                 time.sleep(0.1)
         return super().training_step(model, inputs, num_items_in_batch)

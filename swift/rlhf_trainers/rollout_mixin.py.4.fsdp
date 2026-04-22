@@ -458,7 +458,9 @@ class RolloutTrainerMixin(RLHFTrainerMixin):
                 named_params = list(state_dict.items())
                 parameter_buckets = _create_parameter_buckets(named_params, bucket_size_mb=bucket_size_mb)
                 for bucket in parameter_buckets:
-                    _process_bucket_with_flattened_tensor(self, bucket)
+                    bucket_cuda = [(n, p.cuda() if p.device.type == 'cpu' else p) for n, p in bucket]
+                    _process_bucket_with_flattened_tensor(self, bucket_cuda)
+                    del bucket_cuda
                 del named_params, parameter_buckets
             else:
                 for name, param in state_dict.items():
@@ -617,6 +619,7 @@ class RolloutTrainerMixin(RLHFTrainerMixin):
                     if param.is_cpu:
                         param = param.to(torch.device('cuda'))
                     param = param.full_tensor()
+                    param = param.cpu()
                 raw_state_dict[name] = param
         else:
             # DeepSpeed: use named_parameters + param.data
@@ -909,7 +912,6 @@ class RolloutTrainerMixin(RLHFTrainerMixin):
 
     def _fast_infer(self, inputs: DataType) -> DataType:
         """Efficient inference with vLLM colocate mode support"""
-        # import pdb;pdb.set_trace()
         args = self.args
         assert isinstance(args, RolloutTrainerArgumentsMixin)
 

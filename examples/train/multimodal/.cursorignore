@@ -1,0 +1,43 @@
+# Add directories or file patterns to ignore during indexing (e.g. foo/ or *.csv)
+# --- 根目录元数据与文档 ---
+.git/
+.vscode/
+ms_swift.egg-info/
+asset/
+docs/
+dist/
+build/
+MANIFEST.in
+Makefile
+data/
+data_process/
+# --- 核心屏蔽：递归排除所有数据、日志和结果 ---
+# 使用 **/ 确保所有子目录下的同名目录都被忽略
+**/data/
+**/data_process/
+**/logs/
+**/result/
+**/results/
+**/checkpoints/
+**/old/
+**/__pycache__/
+
+# --- 针对 multimodal 目录下的特定大文件夹 ---
+examples/train/multimodal/lora_llm_full_vit/
+examples/train/multimodal/omni/
+examples/train/multimodal/qwen3-omni-native-infer/
+examples/train/multimodal/vibo_coding/
+
+# --- 屏蔽所有大型模型文件与多模态数据 ---
+*.pth
+*.bin
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.wav
+*.mp3
+*.mp4
+*.jsonl
+*.csv
+*.log

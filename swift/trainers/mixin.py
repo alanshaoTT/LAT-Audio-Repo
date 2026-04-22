@@ -911,6 +911,7 @@ class SwiftMixin:
         # gradient_checkpointing
         gradient_checkpointing = self.args.gradient_checkpointing
         self._prepare_gradient_checkpointing(self.accelerator.unwrap_model(self.model))
+        # import pdb;pdb.set_trace()
         with self.hub.patch_hub(), self._fix_grad_norm_nan(), self._patch_skip_first_batches(
         ), self._patch_deepspeed_load_checkpoint():
             res = super().train(*args, **kwargs)
