@@ -42,7 +42,7 @@ We further introduce:
 ## 🧠 Framework
 
 <p align="center">
-  <img src="figs/lat-audio.png" width="900"/>
+  <img src="figs/LAT-Audio.png" width="900"/>
 
 </p>
 
@@ -53,25 +53,54 @@ LAT-Audio follows a **progressive global-to-local reasoning paradigm**:
 
 ## 📊 Dataset & Benchmark
 
-| Component | Description |
-|----------|------------|
-| **LAT-Chronicle** | 1.2k-hour long-form dataset (1k zh / 200h en) |
-| **LAT-Bench** | Human-verified benchmark (DAC, TAG, TAC) |
-
-👉 Download:
-- 🤗 LAT-Chronicle: ...
-- 🤗 LAT-Bench: ...
-
 <p align="center">
   <img src="figs/pipeline.png" width="900"/>
 
 </p>
 
-## Download
-* The LAT-Chronicle dataset are available at [LAT-Chronicle](https://huggingface.co/datasets/mcshao/LAT-Chronicle).
-* The LAT-Bench benchmark are available at [LAT-Bench](https://huggingface.co/datasets/mcshao/LAT-Bench).
-* The LAT-Audio model are available at [LAT-Audio](https://huggingface.co/mcshao/LAT-Audio).
-* The LAT-Audio-Base model are available at [LAT-Audio-Base](https://huggingface.co/mcshao/LAT-Audio-Base).
+| Component | Description |
+|----------|------------|
+| **LAT-Chronicle** | A 1.2k-hour long-form audio dataset (1k Chinese / 200h English) with fine-grained temporal annotations across six real-world scenarios. |
+| **LAT-Bench** | A human-verified benchmark for long-form temporal reasoning, covering three core tasks: Dense Audio Captioning (DAC), Temporal Audio Grounding (TAG), and Targeted Audio Captioning (TAC). |
+
+**LAT-Chronicle** is constructed via a human-in-the-loop pipeline with multi-track atomic annotations (speech, sound events, music, and environment), enabling precise temporal supervision for long-form audio understanding.
+
+**LAT-Bench** supports audio up to **30 minutes**, providing realistic evaluation settings. All annotations are carefully validated to ensure high temporal accuracy and consistency, covering diverse scenarios such as conversations, vlogs, and complex acoustic environments.
+
+
+
+👉 Download:
+- 🤗 LAT-Chronicle: [LAT-Chronicle](https://huggingface.co/datasets/mcshao/LAT-Chronicle).
+- 🤗 LAT-Bench: [LAT-Bench](https://huggingface.co/datasets/mcshao/LAT-Bench).
+
+## 🤖 Models
+
+| Model | Reasoning | Training Data | Description |
+|------|----------|--------------|-------------|
+| **LAT-Audio** | ✅ Yes | LAT-Chronicle | Tool-augmented multi-step reasoning model with global-to-local temporal inference |
+| **LAT-Audio-Base** | ❌ No | LAT-Chronicle + in-house | Direct modeling baseline fine-tuned from Qwen3-Omni with more in-house data, offering faster and simpler inference |
+
+👉 Download:
+- 🤗 LAT-Audio: [LAT-Audio](https://huggingface.co/mcshao/LAT-Audio).
+- 🤗 LAT-Audio-Base: [LAT-Audio-Base](https://huggingface.co/mcshao/LAT-Audio-Base).
+
+## ⚡ Quick Start
+
+### Load Model
+```python
+from transformers import AutoModel
+
+model = AutoModel.from_pretrained("mcshao/LAT-Audio")
+```
+
+## 📜 Citation
+
+```bibtex
+@article{shao2026lataudio,
+  title={Listening with Time...},
+  ...
+}
+```
 
 ## Contact
 
