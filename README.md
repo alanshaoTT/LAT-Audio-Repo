@@ -21,7 +21,11 @@
 <p align="center">
 🐙 <a href="https://github.com/alanshaoTT/LAT-Audio-Repo">GitHub</a> &nbsp&nbsp | &nbsp&nbsp 
 🤗 <a href="https://huggingface.co/collections/mcshao/lat-audio">HuggingFace</a>
-<br>
 <!-- 🖥️ <a href="">HuggingFace Space</a> &nbsp&nbsp | &nbsp&nbsp  -->
-💬 <a href="https://github.com/ASLP-lab/WenetSpeech-Wu-Repo?tab=readme-ov-file#contact">Contact Us</a>
+💬 <a href="https://github.com/alanshaoTT/LAT-Audio-Repo?tab=readme-ov-file#contact">Contact Us</a>
 </p>
+
+
+## Contact
+
+If you are interested in leaving a message to our research team, feel free to email mcshao@mail.nwpu.edu.cn .
