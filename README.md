@@ -86,6 +86,14 @@ LAT-Audio follows a **progressive global-to-local reasoning paradigm**:
 
 ## ⚡ Quick Start
 
+### 🛠️ Environment Setup
+
+```
+conda create -n lat-audio python=3.10 -y
+conda activate lat-audio
+pip install -r requirements.txt
+```
+
 ### Load Model
 ```python
 from transformers import AutoModel
