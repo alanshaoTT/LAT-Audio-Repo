@@ -98,7 +98,7 @@ pip install -r requirements.txt
 
 LAT-Audio
 ```
-cd 
+cd examples/train/multimodal/
 python lat-audio-infer.py \
   --ckpt ./checkpoints/LAT-Audio \
   --task TAG_EN \
@@ -109,6 +109,7 @@ python lat-audio-infer.py \
 
 LAT-Audio-Base
 ```
+cd examples/train/multimodal/
 bash lat-audio-base-infer.sh
 ```
 
