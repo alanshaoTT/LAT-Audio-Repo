@@ -77,8 +77,8 @@ LAT-Audio follows a **progressive global-to-local reasoning paradigm**:
 
 | Model | Reasoning | Training Data | Description |
 |------|----------|--------------|-------------|
-| **LAT-Audio** | ✅ Yes | LAT-Chronicle | Tool-augmented multi-step reasoning model with global-to-local temporal inference |
-| **LAT-Audio-Base** | ❌ No | LAT-Chronicle + in-house | Direct modeling baseline fine-tuned from Qwen3-Omni with more in-house data, offering faster and simpler inference |
+| **LAT-Audio** |  Yes | LAT-Chronicle | Tool-augmented multi-step reasoning model with global-to-local temporal inference |
+| **LAT-Audio-Base** |  No | LAT-Chronicle + in-house | Direct modeling baseline fine-tuned from Qwen3-Omni with more in-house data, offering faster and simpler inference |
 
 👉 Download:
 - 🤗 LAT-Audio: [LAT-Audio](https://huggingface.co/mcshao/LAT-Audio).
