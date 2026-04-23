@@ -84,9 +84,9 @@ LAT-Audio follows a **progressive global-to-local reasoning paradigm**:
 - 🤗 LAT-Audio: [LAT-Audio](https://huggingface.co/mcshao/LAT-Audio).
 - 🤗 LAT-Audio-Base: [LAT-Audio-Base](https://huggingface.co/mcshao/LAT-Audio-Base).
 
-## ⚡ Quick Start
+## 🛠️ Quick Start
 
-### 🛠️ Environment Setup
+### Environment Setup
 
 ```
 conda create -n lat-audio python=3.10 -y
@@ -94,11 +94,22 @@ conda activate lat-audio
 pip install -r requirements.txt
 ```
 
-### Load Model
-```python
-from transformers import AutoModel
+### Usage
 
-model = AutoModel.from_pretrained("mcshao/LAT-Audio")
+LAT-Audio
+```
+cd 
+python lat-audio-infer.py \
+  --ckpt ./checkpoints/LAT-Audio \
+  --task TAG_EN \
+  --test_file ./data/TAG_test_EN.jsonl \
+  --crop_dir ./tmp_crops \
+  --output ./results/TAG_EN.jsonl
+```
+
+LAT-Audio-Base
+```
+bash lat-audio-base-infer.sh
 ```
 
 ## 📜 Citation
