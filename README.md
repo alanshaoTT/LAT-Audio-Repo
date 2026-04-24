@@ -113,6 +113,9 @@ cd examples/train/multimodal/
 bash lat-audio-base-infer.sh
 ```
 
+### Evaluation Protocol
+
+
 ## 📜 Citation
 
 ```bibtex
