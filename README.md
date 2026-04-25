@@ -120,7 +120,7 @@ bash lat-audio-base-infer.sh
 Dense audio caption
 ```
 cd examples/train/multimodal/
-python ./eval/eval_dac.py \
+python ./eval/eval-DAC.py \
   --input ./result/DAC/EN.jsonl \
   --output ./reports/dac_en_metrics.json \
   --pred-field response \
@@ -133,7 +133,7 @@ python ./eval/eval_dac.py \
 Target audio caption
 ```
 cd examples/train/multimodal/
-python ./eval/eval_tac.py \
+python ./eval/eval-TAC.py \
   --input ./result/TAC/CN.jsonl \
   --output ./reports/tac_metrics.json \
   --pred-field response \
@@ -145,7 +145,7 @@ python ./eval/eval_tac.py \
 Temporal audio grounding
 ```
 cd examples/train/multimodal/
-python eval_tag.py \
+python ./eval/eval-TAG.py \
   --input ./result/TAG/test.jsonl \
   --output ./reports/tag_metrics.json \
   --pred-field response \
