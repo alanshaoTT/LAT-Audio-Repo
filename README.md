@@ -96,6 +96,8 @@ pip install -r requirements.txt
 
 ### Usage
 
+#### Inference
+
 LAT-Audio
 ```
 cd examples/train/multimodal/
@@ -113,8 +115,25 @@ cd examples/train/multimodal/
 bash lat-audio-base-infer.sh
 ```
 
-### Evaluation Protocol
+#### Evaluation Protocol
 
+Dense audio caption
+```
+cd examples/train/multimodal/
+python ./eval/evaluate_dac.py \
+  --input ./result/DAC/EN.jsonl \
+  --output ./reports/dac_en_metrics.json \
+  --pred-field response \
+  --ref-field labels \
+  --thresholds 0.3,0.5,0.7 \
+  --device cuda \
+  --sbert-model ./paraphrase-multilingual-MiniLM-L12-v2
+```
+
+Target audio caption
+```
+
+```
 
 ## 📜 Citation
 
