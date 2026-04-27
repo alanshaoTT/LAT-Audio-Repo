@@ -20,6 +20,7 @@
 
 <!-- 📑 <a href="https://arxiv.org/abs/2601.11027">Paper</a> &nbsp&nbsp | &nbsp&nbsp  -->
 <p align="center">
+📑 <a href="https://arxiv.org/abs/2604.22245">Paper</a> &nbsp&nbsp | &nbsp&nbsp
 🐙 <a href="https://github.com/alanshaoTT/LAT-Audio-Repo">GitHub</a> &nbsp&nbsp | &nbsp&nbsp 
 🤗 <a href="https://huggingface.co/collections/mcshao/lat-audio">HuggingFace</a> &nbsp&nbsp | &nbsp&nbsp 
 <!-- 🖥️ <a href="">HuggingFace Space</a> &nbsp&nbsp | &nbsp&nbsp  -->
