@@ -15,7 +15,6 @@
 
 <p align="center">
   <sup>1</sup> Audio, Speech and Language Processing Group (ASLP@NPU), Northwestern Polytechnical University <br>
-  <sup>2</sup> Independent Researcher <br>
 </p>
 
 <!-- 📑 <a href="https://arxiv.org/abs/2601.11027">Paper</a> &nbsp&nbsp | &nbsp&nbsp  -->
