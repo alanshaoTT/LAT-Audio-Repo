@@ -157,8 +157,10 @@ python ./eval/eval-TAG.py \
 
 ```bibtex
 @article{shao2026lataudio,
-  title={Listening with Time...},
-  ...
+  title={Listening with Time: Precise Temporal Awareness for Long-Form Audio Understanding},
+  author={Shao, Mingchen and Su, Hang and Tian, Wenjie and Mu, Bingshen and Lin, Zhennan and Fan, Lichun and Luo, Zhenbo and Luan, Jian and Xie, Lei},
+  journal={arXiv preprint arXiv:2604.22245},
+  year={2026}
 }
 ```
 
