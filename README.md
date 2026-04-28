@@ -101,6 +101,8 @@ pip install -r requirements.txt
 LAT-Audio
 ```
 cd examples/train/multimodal/
+export QWEN3_OMNI_USE_SWIFT_FORWARD=true
+export AUDIO_SEQ_COMP_FACTOR=2
 python lat-audio-infer.py \
   --ckpt ./checkpoints/LAT-Audio \
   --task TAG_EN \
